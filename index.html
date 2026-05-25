@@ -363,8 +363,16 @@
   @media print {
     body { background: #fff; }
     body::before { display: none; }
-    .card, .project-card { box-shadow: none; border: 1px solid #ddd; }
+    .hero-lang { display: none !important; }
+    .card, .project-card, .pub-item {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      box-shadow: none !important;
+    }
+    .project-card { border: 1px solid #ddd; }
+    .section { page-break-inside: auto; }
     .hero { padding: 2rem 0 1.5rem; }
+    a { text-decoration: none; }
   }
 </style>
 </head>
@@ -400,91 +408,16 @@
   </p>
 </div>
 
-<!-- What I'm Building -->
-<!-- Ongoing Research -->
+<!-- Research -->
 <div class="section">
-  <div class="section-label"><span class="lang-zh">在研课题</span><span class="lang-en">Ongoing Research</span></div>
-  <div class="research-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem;">
-    <div class="project-card" style="border-left-width: 2px; padding: 1.1rem 1.3rem;">
-      <span class="project-tag tag-research"><span class="lang-zh">光电器件</span><span class="lang-en">Optoelectronics</span></span>
-      <div class="project-title" style="font-size: 1rem;"><span class="lang-zh">面向有机太阳能电池的新型透明空穴传输层</span><span class="lang-en">Novel Transparent Hole Transport Layer for Organic Solar Cells</span></div>
-      <div class="project-title" style="font-size: 1rem; margin-top: 0.3rem;"><span class="lang-zh">柔性高性能有机光电探测器</span><span class="lang-en">Flexible High-Performance Organic Photodetector</span></div>
-    </div>
-    <div class="project-card" style="border-left-width: 2px; padding: 1.1rem 1.3rem;">
-      <span class="project-tag tag-research">AI for Science</span>
-      <div class="project-title" style="font-size: 1rem;"><span class="lang-zh">面向器件物理的物理信息神经网络 (PINNs)</span><span class="lang-en">Physics-Informed Neural Networks for Device Physics</span></div>
-    </div>
+  <div class="section-label"><span class="lang-zh">在研课题</span><span class="lang-en">Research</span></div>
+  <div style="font-size: 0.92rem; color: var(--ink-soft); line-height: 1.85;">
+    <span class="lang-zh">现在的研究方向：面向有机太阳能电池的<em style="color: var(--ink); font-style: italic;">新型透明空穴传输层</em>、<em style="color: var(--ink); font-style: italic;">柔性高性能有机光电探测器</em>，以及面向器件物理的<em style="color: var(--ink); font-style: italic;">物理信息神经网络（PINNs）</em>。</span><span class="lang-en">Current threads: <em style="color: var(--ink); font-style: italic;">novel transparent hole transport layers</em> for organic solar cells, <em style="color: var(--ink); font-style: italic;">flexible high-performance organic photodetectors</em>, and <em style="color: var(--ink); font-style: italic;">physics-informed neural networks (PINNs)</em> for device physics.</span>
   </div>
-</div>
-
-<!-- What I'm Building -->
-<div class="section">
-  <div class="section-label"><span class="lang-zh">正在做的事</span><span class="lang-en">What I'm Building</span></div>
-
-  <div class="project-card moss">
-    <span class="project-tag tag-content">Indie</span>
-    <div class="project-title" style="font-family: 'JetBrains Mono', monospace;">0xDEAD</div>
-    <div class="project-desc">
-      <span class="lang-zh">一款基于以太坊智能合约机制的独立游戏，核心玩法围绕约束传播（constraint propagation），叙事受自传体虚构（autofiction）启发。独立开发中，目标 2026 年 6 月推出 demo。</span><span class="lang-en">An indie game built on Ethereum smart contract mechanics, featuring constraint propagation as the core puzzle system and autofiction-inspired narrative design. Solo development, targeting June 2026 demo.</span>
-    </div>
-  </div>
-
-  <div class="project-card rouge">
-    <span class="project-tag tag-product"><span class="lang-zh">AI 产品</span><span class="lang-en">AI Products</span></span>
-    <div class="project-title"><span class="lang-zh">AI 驱动的测评与模拟系统</span><span class="lang-en">AI-Powered Assessment & Simulation Systems</span></div>
-    <div class="project-desc">
-      <span class="lang-zh">为教育场景构建并交付的 AI 产品 —— 包括一套多维度测评平台（已上线）与一款无领导小组讨论模拟器（开发中），从概念到部署全流程负责。同时也是活跃的 AI 内容创作者，分享 AI 工具与工作流的实践经验。</span><span class="lang-en">Built and delivered AI products for education — including a multi-dimensional assessment platform (shipped) and a leaderless group discussion simulator (in development). End-to-end from concept to deployment. Also an active AI content creator, sharing practical perspectives on AI tools and workflows.</span>
-    </div>
-  </div>
-</div>
-
-<!-- Education -->
-<div class="section">
-  <div class="section-label"><span class="lang-zh">教育经历</span><span class="lang-en">Education</span></div>
-
-  <div class="card">
-    <div class="card-top">
-      <span class="card-title"><span class="lang-zh">香港大学</span><span class="lang-en">The University of Hong Kong</span></span>
-      <span class="card-date">2023 – now</span>
-    </div>
-    <div class="card-sub"><span class="lang-zh">PhD · 电子与计算机工程</span><span class="lang-en">Ph.D., Electrical and Computer Engineering</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-top">
-      <span class="card-title"><span class="lang-zh">香港大学</span><span class="lang-en">The University of Hong Kong</span></span>
-      <span class="card-date">2019 – 2022</span>
-    </div>
-    <div class="card-sub"><span class="lang-zh">MPhil · 电气与电子工程</span><span class="lang-en">M.Phil., Electrical and Electronic Engineering</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-top">
-      <span class="card-title"><span class="lang-zh">中南大学</span><span class="lang-en">Central South University</span></span>
-      <span class="card-date">2015 – 2019</span>
-    </div>
-    <div class="card-sub"><span class="lang-zh">BSc · 无机非金属材料</span><span class="lang-en">B.S., Inorganic Materials</span></div>
-  </div>
-</div>
-
-<!-- Experience -->
-<div class="section">
-  <div class="section-label"><span class="lang-zh">工作经历</span><span class="lang-en">Experience</span></div>
-
-  <div class="card">
-    <div class="card-top">
-      <span class="card-title"><span class="lang-zh">北京大学长三角光电科学研究院</span><span class="lang-en">Peking University Yangtze Delta Institute of Optoelectronics</span></span>
-      <span class="card-date">Jun – Aug 2023</span>
-    </div>
-    <div class="card-sub"><span class="lang-zh">Research Assistant · 光伏产业化研究</span><span class="lang-en">Research Assistant · Photovoltaic industrialization research</span></div>
-  </div>
-
-  <div class="card">
-    <div class="card-top">
-      <span class="card-title"><span class="lang-zh">清华大学未来实验室</span><span class="lang-en">Tsinghua University — The Future Laboratory</span></span>
-      <span class="card-date">Mar – May 2023</span>
-    </div>
-    <div class="card-sub"><span class="lang-zh">Research Assistant · 校企合作热管理研究</span><span class="lang-en">Research Assistant · Industry-collaborated thermal management research</span></div>
+  <div style="margin-top: 1.3rem; font-size: 0.85rem;">
+    <a href="https://scholar.google.com/citations?hl=zh-CN&user=X3Q9tF0AAAAJ" target="_blank" rel="noopener" style="color: var(--ink-faint); text-decoration: none; border-bottom: 1px solid currentColor;">
+      <span class="lang-zh">完整论文记录 · Google Scholar →</span><span class="lang-en">Full publication record on Google Scholar →</span>
+    </a>
   </div>
 </div>
 
@@ -543,6 +476,132 @@
     "Synergistic Carbon-Based Hole Transporting Layers for Efficient and Stable Perovskite Solar Cells,"
     <span class="journal">Journal of Materials Science</span> <span class="pub-if">IF 4.5</span>, 53(6), 4507–4514, 2018.
     <span class="pub-badge first"><span class="lang-zh">第一作者</span><span class="lang-en">First Author</span></span>
+  </div>
+</div>
+
+<!-- Building -->
+<div class="section">
+  <div class="section-label"><span class="lang-zh">正在做的事</span><span class="lang-en">Building</span></div>
+
+  <div class="project-card moss">
+    <span class="project-tag tag-content">Indie</span>
+    <div class="project-title" style="font-family: 'JetBrains Mono', monospace;">0xDEAD</div>
+    <div class="project-desc">
+      <span class="lang-zh">一款基于以太坊智能合约机制的独立游戏，核心玩法围绕约束传播（constraint propagation），叙事受自传体虚构（autofiction）启发。独立开发中，目标 2026 年 6 月推出 demo。</span><span class="lang-en">An indie game built on Ethereum smart contract mechanics, featuring constraint propagation as the core puzzle system and autofiction-inspired narrative design. Solo development, targeting June 2026 demo.</span>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <span class="project-tag tag-research">Open Source</span>
+    <div class="project-title" style="font-family: 'JetBrains Mono', monospace;">paper-fetcher</div>
+    <div class="project-desc">
+      <span class="lang-zh">一个 MCP server，让 Claude Code 通过机构 EZproxy 访问需付费的学术论文。GitHub <a href="https://github.com/fermionoid/paper-fetcher" style="color: var(--indigo); text-decoration: none; border-bottom: 1px solid currentColor;">35★</a>，持续维护。</span><span class="lang-en">An MCP server bridging Claude Code to paywalled academic papers via institutional EZproxy. <a href="https://github.com/fermionoid/paper-fetcher" style="color: var(--indigo); text-decoration: none; border-bottom: 1px solid currentColor;">35★ on GitHub</a>, actively maintained.</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 1.4rem; padding: 0.9rem 1.2rem; background: rgba(44,40,38,0.025); border-radius: 8px; font-size: 0.86rem; color: var(--ink-soft); line-height: 1.65;">
+    <span style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; color: var(--ink); margin-right: 0.5em;"><span class="lang-zh">先前 ·</span><span class="lang-en">Previously ·</span></span>
+    <span class="lang-zh">为港大多元卓越计划构建 AI 模考平台，2026 年被一家香港教育机构收购，现由该机构以自有品牌运营。</span><span class="lang-en">Built an AI-powered mock exam platform for HKU's Diversified Excellence Program; acquired by a Hong Kong education organization in 2026, now operating under their brand.</span>
+  </div>
+</div>
+
+<!-- Writing -->
+<div class="section">
+  <div class="section-label"><span class="lang-zh">文章</span><span class="lang-en">Writing</span></div>
+
+  <div style="margin-bottom: 1.3rem; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.75;">
+    <span class="lang-zh">在小红书写 AI 工具与研究工作流的思考——单条最高 <strong style="color: var(--ink); font-weight: 600;">16.6 万阅读</strong>（技术信号→二级市场分析），另一条反炒作向 AI 工具评测 <strong style="color: var(--ink); font-weight: 600;">4 万阅读</strong>。</span><span class="lang-en">Writing on Xiaohongshu about AI tools and research workflows — top post hit <strong style="color: var(--ink); font-weight: 600;">166k reads</strong> (tech signal → market reaction), with an anti-hype take on AI tooling at <strong style="color: var(--ink); font-weight: 600;">40k</strong>.</span>
+  </div>
+
+  <div class="pub-item">
+    <a href="http://xhslink.com/o/2jUZ5PSlruN" target="_blank" rel="noopener" style="color: var(--ink); text-decoration: none; font-weight: 500; border-bottom: 1px solid transparent; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--ink)'" onmouseout="this.style.borderColor='transparent'">
+      「龙虾创始人一条推，MiniMax 港股直接拉到 1000」
+    </a>
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ink-faint); margin-left: 0.6em; font-weight: 300;">2026-03-09</span>
+    <div style="margin-top: 0.35rem; font-size: 0.85rem; color: var(--ink-faint); line-height: 1.6;">
+      <span class="lang-zh">一条开源 benchmark 如何让 MiniMax 港股单日涨 23%——技术信号到二级市场的传导路径。</span><span class="lang-en">How an open-source benchmark moved MiniMax's HK stock 23% in a single day — tracing the path from tech signal to market reaction.</span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <a href="http://xhslink.com/o/3l6FCnqeMjZ" target="_blank" rel="noopener" style="color: var(--ink); text-decoration: none; font-weight: 500; border-bottom: 1px solid transparent; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--ink)'" onmouseout="this.style.borderColor='transparent'">
+      「问问大家有没有啥使用场景？」
+    </a>
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ink-faint); margin-left: 0.6em; font-weight: 300;">2026-02-03</span>
+    <div style="margin-top: 0.35rem; font-size: 0.85rem; color: var(--ink-faint); line-height: 1.6;">
+      <span class="lang-zh">实测 OpenClaw 后的反炒作判断——哪些场景值得用 AI agent，哪些不值得。</span><span class="lang-en">A skeptical take on OpenClaw after hands-on testing — distinguishing where AI agents earn their keep, and where they don't.</span>
+    </div>
+  </div>
+
+  <div class="pub-item">
+    <a href="http://xhslink.com/o/8CsaswkM2SR" target="_blank" rel="noopener" style="color: var(--ink); text-decoration: none; font-weight: 500; border-bottom: 1px solid transparent; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--ink)'" onmouseout="this.style.borderColor='transparent'">
+      「写了 MCP 让 AI 看无 OA 版本的论文」
+    </a>
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ink-faint); margin-left: 0.6em; font-weight: 300;">2026-02-09</span>
+    <div style="margin-top: 0.35rem; font-size: 0.85rem; color: var(--ink-faint); line-height: 1.6;">
+      <span class="lang-zh">Build in public：开源一个 MCP server，让 Claude 通过机构 EZproxy 访问付费论文。</span><span class="lang-en">Building in public: an open-source MCP server bridging Claude to paywalled papers via institutional EZproxy.</span>
+    </div>
+  </div>
+
+  <div style="margin-top: 1.1rem; padding-top: 0.95rem; border-top: 1px solid rgba(44,40,38,0.06); font-size: 0.86rem; color: var(--ink-soft); line-height: 1.65;">
+    <span class="lang-zh">也写了 <a href="http://xhslink.com/o/4eiiV6xfoA0" target="_blank" rel="noopener" style="color: var(--ink); font-weight: 500; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--ink)'" onmouseout="this.style.borderColor='transparent'">「参加真格 AI 活动后的一个小思考」</a>——真格基金 OpenClaw 深圳开放麦的现场观察。</span><span class="lang-en">Also wrote <a href="http://xhslink.com/o/4eiiV6xfoA0" target="_blank" rel="noopener" style="color: var(--ink); font-weight: 500; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--ink)'" onmouseout="this.style.borderColor='transparent'">「参加真格 AI 活动后的一个小思考」</a> — on-the-ground reflections after Zhenfund's OpenClaw open mic in Shenzhen.</span>
+    <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--ink-faint); margin-left: 0.4em; font-weight: 300;">2026-03-16</span>
+  </div>
+
+  <div style="margin-top: 1.3rem; font-size: 0.85rem;">
+    <a href="https://xhslink.com/m/7Jel5edPeNo" target="_blank" rel="noopener" style="color: var(--ink-faint); text-decoration: none; border-bottom: 1px solid currentColor;">
+      <span class="lang-zh">在小红书继续读 →</span><span class="lang-en">Read more on 小红书 →</span>
+    </a>
+  </div>
+</div>
+
+<!-- Education -->
+<div class="section">
+  <div class="section-label"><span class="lang-zh">教育经历</span><span class="lang-en">Education</span></div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-title"><span class="lang-zh">香港大学</span><span class="lang-en">The University of Hong Kong</span></span>
+      <span class="card-date">2023 – now</span>
+    </div>
+    <div class="card-sub"><span class="lang-zh">PhD · 电子与计算机工程</span><span class="lang-en">Ph.D., Electrical and Computer Engineering</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-title"><span class="lang-zh">香港大学</span><span class="lang-en">The University of Hong Kong</span></span>
+      <span class="card-date">2019 – 2022</span>
+    </div>
+    <div class="card-sub"><span class="lang-zh">MPhil · 电气与电子工程</span><span class="lang-en">M.Phil., Electrical and Electronic Engineering</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-title"><span class="lang-zh">中南大学</span><span class="lang-en">Central South University</span></span>
+      <span class="card-date">2015 – 2019</span>
+    </div>
+    <div class="card-sub"><span class="lang-zh">BSc · 无机非金属材料</span><span class="lang-en">B.S., Inorganic Materials</span></div>
+  </div>
+</div>
+
+<!-- Experience -->
+<div class="section">
+  <div class="section-label"><span class="lang-zh">工作经历</span><span class="lang-en">Experience</span></div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-title"><span class="lang-zh">北京大学长三角光电科学研究院</span><span class="lang-en">Peking University Yangtze Delta Institute of Optoelectronics</span></span>
+      <span class="card-date">Jun – Aug 2023</span>
+    </div>
+    <div class="card-sub"><span class="lang-zh">Research Assistant · 光伏产业化研究</span><span class="lang-en">Research Assistant · Photovoltaic industrialization research</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <span class="card-title"><span class="lang-zh">清华大学未来实验室</span><span class="lang-en">Tsinghua University — The Future Laboratory</span></span>
+      <span class="card-date">Mar – May 2023</span>
+    </div>
+    <div class="card-sub"><span class="lang-zh">Research Assistant · 校企合作热管理研究</span><span class="lang-en">Research Assistant · Industry-collaborated thermal management research</span></div>
   </div>
 </div>
 
