@@ -373,101 +373,95 @@
 
   @media print {
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-    @page { size: A4; margin: 0.4in 0.5in; }
+    @page { size: A4; margin: 0.55in 0.6in; }
 
-    body { background: #fff; font-size: 11.5px; line-height: 1.32; }
+    body { background: #fff; font-size: 12px; line-height: 1.5; }
     body::before { display: none; }
     .hero-lang { display: none !important; }
     .print-url {
       display: block !important;
       text-align: center;
-      margin-top: 0.4rem;
+      margin-top: 0.7rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
+      font-size: 0.78rem;
       color: var(--ink-faint);
       letter-spacing: 0.03em;
     }
     .print-url a { color: var(--ink-soft); border-bottom: 1px solid currentColor; }
 
-    /* Tighten everything */
-    .container { padding: 0 1.2rem; max-width: 100%; }
-    .section { margin-bottom: 0.55rem; }
-    .section-label { margin-bottom: 0.25rem; font-size: 0.68rem; page-break-after: avoid; }
-    .intro p { margin: 0; }
-    /* Tighter project cards in print: scoped to Building only */
-    .project-card { padding: 0.4rem 0.65rem !important; margin-bottom: 0.25rem !important; }
-    .project-desc { margin-top: 0.1rem; }
-    /* Previously box — make tighter */
-    .section > div[style*="background: rgba(44,40,38,0.025)"] {
-      padding: 0.4rem 0.7rem !important;
-      margin-top: 0.4rem !important;
-      font-size: 0.7rem !important;
-    }
-    /* Chips smaller */
-    .chip { font-size: 0.62rem !important; padding: 0.12em 0.5em !important; }
+    /* Comfortable spacing */
+    .container { padding: 0 1.5rem; max-width: 100%; }
+    .section { margin-bottom: 0.7rem; }
+    .section-label { margin-bottom: 0.35rem; font-size: 0.76rem; page-break-after: avoid; }
+    /* Keep HKAESE Previously box with Building section */
+    .previously-box { page-break-before: avoid !important; break-before: avoid !important; margin-top: 0.6rem !important; padding: 0.5rem 0.85rem !important; }
+    /* Beyond the Lab: tighter quote spacing in print */
+    .section p[style*="italic"] { margin-bottom: 0.4rem !important; font-size: 1.05rem !important; }
+    /* Writing pub-items tighter */
+    .section[class*="section"] > .pub-item { padding: 0.3rem 0 !important; }
 
     /* Hero */
-    .hero { padding: 0.2rem 0 0.4rem; }
-    .hero-name { font-size: 1.7rem; margin-bottom: 0; letter-spacing: 0.04em; }
-    .hero-tagline { font-size: 0.8rem; margin-bottom: 0.2rem; }
-    .hero-divider { margin: 0.3rem auto 0; }
-    .hero-divider svg { width: 90px; height: 14px; }
+    .hero { padding: 0.4rem 0 0.6rem; }
+    .hero-name { font-size: 1.9rem; margin-bottom: 0.15rem; letter-spacing: 0.05em; }
+    .hero-tagline { font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .hero-divider { margin: 0.5rem auto 0; }
+    .hero-divider svg { width: 120px; height: 18px; }
 
     /* Intro */
     .intro { padding: 0.3rem 0 0.4rem; max-width: none; }
-    .intro p { font-size: 0.8rem; line-height: 1.4; }
+    .intro p { font-size: 0.88rem; line-height: 1.5; margin: 0; }
 
-    /* Cards (Education / Experience) */
+    /* Cards (Education / Experience / Building) */
     .card, .project-card {
-      padding: 0.45rem 0.7rem;
-      margin-bottom: 0.3rem;
+      padding: 0.65rem 0.9rem;
+      margin-bottom: 0.45rem;
       break-inside: avoid;
       page-break-inside: avoid;
       box-shadow: none !important;
     }
     .project-card { border: 1px solid #ddd; }
-    .card-title { font-size: 0.86rem; }
-    .card-date { font-size: 0.66rem; }
-    .card-sub { font-size: 0.74rem; }
-    .project-title { font-size: 0.88rem; }
-    .project-desc { font-size: 0.74rem; line-height: 1.4; }
-    .project-tag { font-size: 0.58rem; padding: 0.1em 0.45em; margin-bottom: 0.25rem; }
+    .card-title { font-size: 0.94rem; }
+    .card-date { font-size: 0.72rem; }
+    .card-sub { font-size: 0.8rem; }
+    .project-title { font-size: 0.96rem; }
+    .project-desc { font-size: 0.82rem; line-height: 1.5; }
+    .project-tag { font-size: 0.62rem; padding: 0.12em 0.5em; margin-bottom: 0.3rem; }
 
-    /* Publications: dense */
+    /* Publications */
     .pub-item {
-      padding: 0.2rem 0;
-      font-size: 0.72rem;
-      line-height: 1.35;
+      padding: 0.35rem 0;
+      font-size: 0.8rem;
+      line-height: 1.5;
       break-inside: avoid;
       page-break-inside: avoid;
     }
-    .pub-badge { font-size: 0.55rem; padding: 0.08em 0.4em; }
-    .pub-if { font-size: 0.6rem; }
+    .pub-badge { font-size: 0.6rem; padding: 0.1em 0.45em; }
+    .pub-if { font-size: 0.64rem; }
 
     /* Skills chips */
-    .chips { gap: 0.3rem; }
-    .chip { font-size: 0.7rem; padding: 0.2em 0.6em; }
+    .chips { gap: 0.4rem; }
+    .chip { font-size: 0.74rem; padding: 0.25em 0.7em; }
 
-    /* Hide photo section entirely in print — saves a half page */
+    /* Hidden in print */
     .print-hide { display: none !important; }
-
-    /* Beyond the Lab: hide long descriptive paragraphs in print */
     .print-skip { display: none !important; }
 
-    /* Education / Experience: 2-column grid for density */
+    /* Education 2-column grid */
     .print-grid {
       display: grid !important;
       grid-template-columns: repeat(2, 1fr);
-      gap: 0.4rem 0.9rem;
+      gap: 0.55rem 1rem;
     }
     .print-grid .section-label { grid-column: 1 / -1; }
     .print-grid .card { margin-bottom: 0; }
 
-    /* Footer + contact: compact */
-    footer { padding: 0.4rem 0 0.2rem; font-size: 0.66rem; }
-    footer > div:first-child { gap: 0.7rem; margin-bottom: 0.2rem; }
-    /* Contact section text smaller in print */
-    .section[id], .section > div[style*="text-align: center"] { font-size: 0.78rem !important; line-height: 1.5 !important; }
+    /* Footer + contact: tight pairing */
+    footer { padding: 0.3rem 0 0.2rem; font-size: 0.72rem; }
+    footer > div:first-child { gap: 0.9rem; margin-bottom: 0.2rem; }
+    /* Contact section: tighten line-height + reduce gap to footer below */
+    .section > div[style*="line-height: 2"] { line-height: 1.5 !important; font-size: 0.78rem !important; }
+    /* Make the Contact section's bottom margin minimal so footer comes right after */
+    .section:has(+ footer), .section:nth-last-child(2) { margin-bottom: 0.2rem !important; }
 
     a { text-decoration: none; }
   }
@@ -568,7 +562,7 @@
     </div>
   </div>
 
-  <div style="margin-top: 1.4rem; padding: 0.9rem 1.2rem; background: rgba(44,40,38,0.025); border-radius: 8px; font-size: 0.86rem; color: var(--ink-soft); line-height: 1.65;">
+  <div class="previously-box" style="margin-top: 1.4rem; padding: 0.9rem 1.2rem; background: rgba(44,40,38,0.025); border-radius: 8px; font-size: 0.86rem; color: var(--ink-soft); line-height: 1.65;">
     <span style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; color: var(--ink); margin-right: 0.5em;"><span class="lang-zh">先前 ·</span><span class="lang-en">Previously ·</span></span>
     <span class="lang-zh">港大多元卓越（HKU DEP）AI 模考平台，2026 年转让给一家香港教育机构，目前由对方运营。 <a href="http://xhslink.com/o/8e6jlJ6gq9w" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid currentColor; text-decoration: none;">↗ 上线笔记</a></span><span class="lang-en">An AI-powered mock exam platform for HKU's Diversified Excellence Program (DEP); transferred to a Hong Kong education organization in 2026, now operated by them. <a href="http://xhslink.com/o/8e6jlJ6gq9w" target="_blank" rel="noopener" style="color: var(--ink); border-bottom: 1px solid currentColor; text-decoration: none;">↗ launch post</a></span>
   </div>
@@ -729,7 +723,7 @@
       When I'm not in the lab or writing code, you'll find me on the squash court, hiking with a drone in my backpack, or lost in an indie game or anime.
       I believe the best builders draw from everywhere — research rigor, engineering instinct, design taste, and a healthy dose of curiosity about things that have nothing to do with work.
     </p>
-    <p style="font-size: 0.95rem; color: var(--ink); line-height: 1.75; margin-bottom: 1.2rem;">
+    <p class="print-skip" style="font-size: 0.95rem; color: var(--ink); line-height: 1.75; margin-bottom: 1.2rem;">
       I build things I want to exist — and it turns out other people want them too.
     </p>
     <div class="chips">
@@ -762,7 +756,7 @@
 </div>
 
 <!-- Social Footer -->
-<footer>
+<footer class="print-hide">
   <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.8rem;">
     <a href="https://scholar.google.com/citations?hl=zh-CN&user=X3Q9tF0AAAAJ" style="color: var(--ink-faint); text-decoration: none;">Google Scholar</a>
     <a href="https://github.com/fermionoid" style="color: var(--ink-faint); text-decoration: none;">GitHub</a>
@@ -770,7 +764,7 @@
     <a href="https://xhslink.com/m/7Jel5edPeNo" style="color: var(--ink-faint); text-decoration: none;">小红书</a>
     <a href="https://x.com/FermiZhang" style="color: var(--ink-faint); text-decoration: none;">X / Twitter</a>
   </div>
-  <div style="margin-top: 0.5rem;"><span class="lang-zh">Build with curiosity · 2026 年 5 月</span><span class="lang-en">Build with curiosity · May 2026</span></div>
+  <div class="print-skip" style="margin-top: 0.5rem;"><span class="lang-zh">Build with curiosity · 2026 年 5 月</span><span class="lang-en">Build with curiosity · May 2026</span></div>
 </footer>
 
 </div>
