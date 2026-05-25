@@ -58,6 +58,9 @@
   }
   .hero-lang-sep { color: var(--ink-faint); font-size: 0.7rem; }
 
+  /* Live URL pointer — only visible in PDF/print output */
+  .print-url { display: none; }
+
   html { scroll-behavior: smooth; }
 
   body {
@@ -369,9 +372,20 @@
   }
 
   @media print {
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     body { background: #fff; }
     body::before { display: none; }
     .hero-lang { display: none !important; }
+    .print-url {
+      display: block !important;
+      text-align: center;
+      margin-top: 1.2rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+      color: var(--ink-faint);
+      letter-spacing: 0.03em;
+    }
+    .print-url a { color: var(--ink-soft); border-bottom: 1px solid currentColor; }
     .card, .project-card, .pub-item {
       break-inside: avoid;
       page-break-inside: avoid;
@@ -391,6 +405,9 @@
 <div class="hero">
   <h1 class="hero-name"><span class="lang-zh">章芮嘉 (Fermi)</span><span class="lang-en">Ruijia (Fermi) Zhang</span></h1>
   <p class="hero-tagline"><span class="lang-zh">Researcher · AI Engineer · Creator</span><span class="lang-en">Researcher · AI Engineer · Creator</span></p>
+  <div class="print-url">
+    <span class="lang-zh">网页版 · </span><span class="lang-en">Live · </span><a href="https://fermionoid.github.io">fermionoid.github.io</a>
+  </div>
   <div class="hero-lang" role="group" aria-label="Language / 语言">
     <button class="hero-lang-opt" data-lang="en">English</button>
     <span class="hero-lang-sep">·</span>
