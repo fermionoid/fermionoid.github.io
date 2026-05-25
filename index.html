@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ruijia (Fermi) Zhang — Builder · Researcher · Engineer</title>
+<title>章芮嘉 (Fermi) — Builder · Researcher · Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
@@ -22,6 +22,39 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ─── Language toggle ─── */
+  .lang-en { display: none; }
+  body.en .lang-zh { display: none; }
+  body.en .lang-en { display: revert; }
+
+  .lang-toggle {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 100;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(8px);
+    border-radius: 999px;
+    padding: 0.45rem 1.1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    box-shadow: 0 2px 12px rgba(44,40,38,0.06);
+    letter-spacing: 0.05em;
+  }
+  .lang-toggle:hover {
+    background: var(--ink);
+    color: var(--linen);
+    transform: translateY(-1px);
+  }
+  @media (max-width: 600px) {
+    .lang-toggle { top: 0.8rem; right: 0.8rem; padding: 0.35rem 0.9rem; font-size: 0.72rem; }
+  }
 
   html { scroll-behavior: smooth; }
 
@@ -334,12 +367,13 @@
 </style>
 </head>
 <body>
+<button class="lang-toggle" id="langToggle" aria-label="切换语言 / Switch language">EN</button>
 <div class="container">
 
 <!-- Hero -->
 <div class="hero">
-  <h1 class="hero-name">Ruijia (Fermi) Zhang</h1>
-  <p class="hero-tagline">Researcher · AI Engineer · Creator</p>
+  <h1 class="hero-name"><span class="lang-zh">章芮嘉 (Fermi)</span><span class="lang-en">Ruijia (Fermi) Zhang</span></h1>
+  <p class="hero-tagline"><span class="lang-zh">Researcher · AI Engineer · Creator</span><span class="lang-en">Researcher · AI Engineer · Creator</span></p>
   <div class="hero-divider">
     <svg width="180" height="28" viewBox="0 0 180 28" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M10 14 C28 14, 35 3, 50 3 C65 3, 72 14, 90 14 C108 14, 115 3, 130 3 C145 3, 152 14, 170 14" stroke="#1C5BA0" stroke-width="1.2" stroke-linecap="round" fill="none"/>
@@ -350,7 +384,11 @@
 
 <!-- Intro -->
 <div class="intro">
-  <p>
+  <p class="lang-zh">
+    HKU PhD candidate，研究方向是<em>下一代光伏</em>和<em>器件物理的 AI 应用</em>。
+    平时做 AI 驱动的产品、写能解决真实问题的工具，也写一些研究与工程交汇处的观察。
+  </p>
+  <p class="lang-en">
     Ph.D. candidate at HKU working on <em>next-generation photovoltaics</em> and <em>AI for device physics</em>.
     I build AI-powered products, ship tools that solve real problems, and write about the intersection of research and engineering.
   </p>
@@ -359,95 +397,95 @@
 <!-- What I'm Building -->
 <!-- Ongoing Research -->
 <div class="section">
-  <div class="section-label">Ongoing Research</div>
+  <div class="section-label"><span class="lang-zh">在研课题</span><span class="lang-en">Ongoing Research</span></div>
   <div class="research-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem;">
     <div class="project-card" style="border-left-width: 2px; padding: 1.1rem 1.3rem;">
-      <span class="project-tag tag-research">Optoelectronics</span>
-      <div class="project-title" style="font-size: 1rem;">Novel Transparent Hole Transport Layer for Organic Solar Cells</div>
-      <div class="project-title" style="font-size: 1rem; margin-top: 0.3rem;">Flexible High-Performance Organic Photodetector</div>
+      <span class="project-tag tag-research"><span class="lang-zh">光电器件</span><span class="lang-en">Optoelectronics</span></span>
+      <div class="project-title" style="font-size: 1rem;"><span class="lang-zh">面向有机太阳能电池的新型透明空穴传输层</span><span class="lang-en">Novel Transparent Hole Transport Layer for Organic Solar Cells</span></div>
+      <div class="project-title" style="font-size: 1rem; margin-top: 0.3rem;"><span class="lang-zh">柔性高性能有机光电探测器</span><span class="lang-en">Flexible High-Performance Organic Photodetector</span></div>
     </div>
     <div class="project-card" style="border-left-width: 2px; padding: 1.1rem 1.3rem;">
       <span class="project-tag tag-research">AI for Science</span>
-      <div class="project-title" style="font-size: 1rem;">Physics-Informed Neural Networks for Device Physics</div>
+      <div class="project-title" style="font-size: 1rem;"><span class="lang-zh">面向器件物理的物理信息神经网络 (PINNs)</span><span class="lang-en">Physics-Informed Neural Networks for Device Physics</span></div>
     </div>
   </div>
 </div>
 
 <!-- What I'm Building -->
 <div class="section">
-  <div class="section-label">What I'm Building</div>
+  <div class="section-label"><span class="lang-zh">正在做的事</span><span class="lang-en">What I'm Building</span></div>
 
   <div class="project-card rouge">
-    <span class="project-tag tag-product">AI Products</span>
-    <div class="project-title">AI-Powered Assessment & Simulation Systems</div>
+    <span class="project-tag tag-product"><span class="lang-zh">AI 产品</span><span class="lang-en">AI Products</span></span>
+    <div class="project-title"><span class="lang-zh">AI 驱动的测评与模拟系统</span><span class="lang-en">AI-Powered Assessment & Simulation Systems</span></div>
     <div class="project-desc">
-      Built and delivered AI products for education — including a multi-dimensional assessment platform (shipped) and a leaderless group discussion simulator (in development). End-to-end from concept to deployment. Also an active AI content creator, sharing practical perspectives on AI tools and workflows.
+      <span class="lang-zh">为教育场景构建并交付的 AI 产品 —— 包括一套多维度测评平台（已上线）与一款无领导小组讨论模拟器（开发中），从概念到部署全流程负责。同时也是活跃的 AI 内容创作者，分享 AI 工具与工作流的实践经验。</span><span class="lang-en">Built and delivered AI products for education — including a multi-dimensional assessment platform (shipped) and a leaderless group discussion simulator (in development). End-to-end from concept to deployment. Also an active AI content creator, sharing practical perspectives on AI tools and workflows.</span>
     </div>
   </div>
 
   <div class="project-card" style="border-left-color: var(--ink-faint);">
-    <span class="project-tag" style="background: rgba(44,40,38,0.06); color: var(--ink-soft);">Side Project</span>
+    <span class="project-tag" style="background: rgba(44,40,38,0.06); color: var(--ink-soft);"><span class="lang-zh">Side Project</span><span class="lang-en">Side Project</span></span>
     <div class="project-title" style="font-family: 'JetBrains Mono', monospace;">0xDEAD</div>
     <div class="project-desc">
-      An indie game built on Ethereum smart contract mechanics, featuring constraint propagation as the core puzzle system and autofiction-inspired narrative design. Solo development, targeting June 2026 demo.
+      <span class="lang-zh">一款基于以太坊智能合约机制的独立游戏，核心玩法围绕约束传播（constraint propagation），叙事受自传体虚构（autofiction）启发。独立开发中，目标 2026 年 6 月推出 demo。</span><span class="lang-en">An indie game built on Ethereum smart contract mechanics, featuring constraint propagation as the core puzzle system and autofiction-inspired narrative design. Solo development, targeting June 2026 demo.</span>
     </div>
   </div>
 </div>
 
 <!-- Education -->
 <div class="section">
-  <div class="section-label">Education</div>
+  <div class="section-label"><span class="lang-zh">教育经历</span><span class="lang-en">Education</span></div>
 
   <div class="card">
     <div class="card-top">
-      <span class="card-title">The University of Hong Kong</span>
+      <span class="card-title"><span class="lang-zh">香港大学</span><span class="lang-en">The University of Hong Kong</span></span>
       <span class="card-date">2023 – now</span>
     </div>
-    <div class="card-sub">Ph.D., Electrical and Computer Engineering</div>
+    <div class="card-sub"><span class="lang-zh">PhD · 电子与计算机工程</span><span class="lang-en">Ph.D., Electrical and Computer Engineering</span></div>
   </div>
 
   <div class="card">
     <div class="card-top">
-      <span class="card-title">The University of Hong Kong</span>
+      <span class="card-title"><span class="lang-zh">香港大学</span><span class="lang-en">The University of Hong Kong</span></span>
       <span class="card-date">2019 – 2022</span>
     </div>
-    <div class="card-sub">M.Phil., Electrical and Electronic Engineering</div>
+    <div class="card-sub"><span class="lang-zh">MPhil · 电气与电子工程</span><span class="lang-en">M.Phil., Electrical and Electronic Engineering</span></div>
   </div>
 
   <div class="card">
     <div class="card-top">
-      <span class="card-title">Central South University</span>
+      <span class="card-title"><span class="lang-zh">中南大学</span><span class="lang-en">Central South University</span></span>
       <span class="card-date">2015 – 2019</span>
     </div>
-    <div class="card-sub">B.S., Inorganic Materials</div>
+    <div class="card-sub"><span class="lang-zh">BSc · 无机非金属材料</span><span class="lang-en">B.S., Inorganic Materials</span></div>
   </div>
 </div>
 
 <!-- Experience -->
 <div class="section">
-  <div class="section-label">Experience</div>
+  <div class="section-label"><span class="lang-zh">工作经历</span><span class="lang-en">Experience</span></div>
 
   <div class="card">
     <div class="card-top">
-      <span class="card-title">Peking University Yangtze Delta Institute of Optoelectronics</span>
+      <span class="card-title"><span class="lang-zh">北京大学长三角光电科学研究院</span><span class="lang-en">Peking University Yangtze Delta Institute of Optoelectronics</span></span>
       <span class="card-date">Jun – Aug 2023</span>
     </div>
-    <div class="card-sub">Research Assistant · Photovoltaic industrialization research</div>
+    <div class="card-sub"><span class="lang-zh">Research Assistant · 光伏产业化研究</span><span class="lang-en">Research Assistant · Photovoltaic industrialization research</span></div>
   </div>
 
   <div class="card">
     <div class="card-top">
-      <span class="card-title">Tsinghua University — The Future Laboratory</span>
+      <span class="card-title"><span class="lang-zh">清华大学未来实验室</span><span class="lang-en">Tsinghua University — The Future Laboratory</span></span>
       <span class="card-date">Mar – May 2023</span>
     </div>
-    <div class="card-sub">Research Assistant · Industry-collaborated thermal management research</div>
+    <div class="card-sub"><span class="lang-zh">Research Assistant · 校企合作热管理研究</span><span class="lang-en">Research Assistant · Industry-collaborated thermal management research</span></div>
   </div>
 </div>
 
 <!-- Publications -->
 <div class="section">
-  <div class="section-label">Publications</div>
-  <div style="font-size: 0.82rem; color: var(--ink-faint); font-family: 'JetBrains Mono', monospace; margin-bottom: 1rem;">226 citations · h-index 7 · i10-index 6</div>
+  <div class="section-label"><span class="lang-zh">学术发表</span><span class="lang-en">Publications</span></div>
+  <div style="font-size: 0.82rem; color: var(--ink-faint); font-family: 'JetBrains Mono', monospace; margin-bottom: 1rem;"><span class="lang-zh">226 citations · h-index 7 · i10-index 6</span><span class="lang-en">226 citations · h-index 7 · i10-index 6</span></div>
 
   <div class="pub-item">
     …, <span class="me">R. Zhang</span>, …, W. C. H. Choy,
@@ -472,7 +510,7 @@
     <span class="me">R. Zhang</span>, Z. Huang, W. Chen, B. Lyu, H. Zhang, X. He, X. Hu, Y. Song, W. C. H. Choy,
     "A Self-assembled Vertical-gradient and Well-dispersed MXene Structure for Flexible Large-area Perovskite Modules,"
     <span class="journal">Advanced Functional Materials</span> <span class="pub-if">IF 18.5</span>, 33(5), 2023.
-    <span class="pub-badge first">First Author</span>
+    <span class="pub-badge first"><span class="lang-zh">第一作者</span><span class="lang-en">First Author</span></span>
   </div>
 
   <div class="pub-item">
@@ -485,7 +523,7 @@
     W. Chen, <span class="me">R. Zhang</span> (co-first), X. Yang, H. Wang, H. Yang, X. Hu, S. Zhang,
     "A 1D:2D Structured AgNW:MXene Composite Transparent Electrode with High Mechanical Robustness for Flexible Photovoltaics,"
     <span class="journal">Journal of Materials Chemistry C</span> <span class="pub-if">IF 6.4</span>, 10(22), 8625–8633, 2022.
-    <span class="pub-badge first">Co-first</span>
+    <span class="pub-badge first"><span class="lang-zh">共同一作</span><span class="lang-en">Co-first</span></span>
   </div>
 
   <div class="pub-item">
@@ -498,16 +536,16 @@
     <span class="me">R. Zhang</span>, Y. Chen, J. Xiong, X. Liu,
     "Synergistic Carbon-Based Hole Transporting Layers for Efficient and Stable Perovskite Solar Cells,"
     <span class="journal">Journal of Materials Science</span> <span class="pub-if">IF 4.5</span>, 53(6), 4507–4514, 2018.
-    <span class="pub-badge first">First Author</span>
+    <span class="pub-badge first"><span class="lang-zh">第一作者</span><span class="lang-en">First Author</span></span>
   </div>
 </div>
 
 <!-- Skills -->
 <div class="section">
-  <div class="section-label">Technical Toolkit</div>
+  <div class="section-label"><span class="lang-zh">技术栈</span><span class="lang-en">Technical Toolkit</span></div>
 
   <div style="margin-bottom: 1rem;">
-    <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.5rem;">AI & Software Engineering</div>
+    <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.5rem;"><span class="lang-zh">AI & Software Engineering</span><span class="lang-en">AI & Software Engineering</span></div>
     <div class="chips">
       <span class="chip">Python</span>
       <span class="chip">TypeScript</span>
@@ -532,7 +570,7 @@
   </div>
 
   <div>
-    <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.5rem;">Materials & Device Physics</div>
+    <div style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 0.9rem; color: var(--ink); margin-bottom: 0.5rem;"><span class="lang-zh">Materials & Device Physics</span><span class="lang-en">Materials & Device Physics</span></div>
     <div class="chips">
       <span class="chip">Thin-Film Device Fabrication</span>
       <span class="chip">Microscopy (AFM, SEM, TEM)</span>
@@ -546,24 +584,31 @@
 
 <!-- About Me -->
 <div class="section">
-  <div class="section-label">Beyond the Lab</div>
+  <div class="section-label"><span class="lang-zh">实验室之外</span><span class="lang-en">Beyond the Lab</span></div>
   <div style="max-width: 620px;">
     <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: var(--ink); line-height: 1.6; margin-bottom: 1rem;">
-      "I'm endlessly curious, and I know how to make things real."
+      <span class="lang-zh">"我有用不完的好奇心，并且知道怎么把它们变成真的。"</span><span class="lang-en">"I'm endlessly curious, and I know how to make things real."</span>
     </p>
-    <p style="font-size: 0.95rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 0.5rem;">
+    <p class="lang-zh" style="font-size: 0.95rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 0.5rem;">
+      不写代码、不在实验室的时候，我大概率在壁球场上、背着无人机徒步、或者埋头在某款独立游戏或动漫里。
+      我相信最好的造物者从四处汲取养分 —— 研究的严谨、工程的直觉、设计的品味，再加上一点对工作之外事物的好奇心。
+    </p>
+    <p class="lang-en" style="font-size: 0.95rem; color: var(--ink-soft); line-height: 1.75; margin-bottom: 0.5rem;">
       When I'm not in the lab or writing code, you'll find me on the squash court, hiking with a drone in my backpack, or lost in an indie game or anime.
       I believe the best builders draw from everywhere — research rigor, engineering instinct, design taste, and a healthy dose of curiosity about things that have nothing to do with work.
     </p>
-    <p style="font-size: 0.95rem; color: var(--ink); line-height: 1.75; margin-bottom: 1.2rem;">
+    <p class="lang-zh" style="font-size: 0.95rem; color: var(--ink); line-height: 1.75; margin-bottom: 1.2rem;">
+      做自己想要的东西 —— 恰好也是别人需要的。
+    </p>
+    <p class="lang-en" style="font-size: 0.95rem; color: var(--ink); line-height: 1.75; margin-bottom: 1.2rem;">
       I build things I want to exist — and it turns out other people want them too.
     </p>
     <div class="chips">
-      <span class="chip">Squash</span>
-      <span class="chip">Hiking & Photography</span>
-      <span class="chip">Drone</span>
-      <span class="chip">Indie Games</span>
-      <span class="chip">Anime</span>
+      <span class="chip"><span class="lang-zh">壁球</span><span class="lang-en">Squash</span></span>
+      <span class="chip"><span class="lang-zh">徒步与摄影</span><span class="lang-en">Hiking & Photography</span></span>
+      <span class="chip"><span class="lang-zh">无人机</span><span class="lang-en">Drone</span></span>
+      <span class="chip"><span class="lang-zh">独立游戏</span><span class="lang-en">Indie Games</span></span>
+      <span class="chip"><span class="lang-zh">动漫</span><span class="lang-en">Anime</span></span>
     </div>
   </div>
 </div>
@@ -575,7 +620,7 @@
 
 <!-- Contact -->
 <div class="section">
-  <div class="section-label">Get in Touch</div>
+  <div class="section-label"><span class="lang-zh">联系方式</span><span class="lang-en">Get in Touch</span></div>
   <div style="text-align: center; font-size: 0.9rem; color: var(--ink-soft); line-height: 2;">
     <span>ruijiaz&#64;connect.hku.hk</span>
     <span style="margin: 0 0.6em; color: var(--ink-faint);">·</span>
@@ -595,9 +640,33 @@
     <a href="https://xhslink.com/m/7Jel5edPeNo" style="color: var(--ink-faint); text-decoration: none;">小红书</a>
     <a href="https://x.com/FermiZhang" style="color: var(--ink-faint); text-decoration: none;">X / Twitter</a>
   </div>
-  <div style="margin-top: 0.5rem;">Build with curiosity · May 2026</div>
+  <div style="margin-top: 0.5rem;"><span class="lang-zh">Build with curiosity · 2026 年 5 月</span><span class="lang-en">Build with curiosity · May 2026</span></div>
 </footer>
 
 </div>
+
+<script>
+(function() {
+  var TITLES = {
+    zh: '章芮嘉 (Fermi) — Builder · Researcher · Engineer',
+    en: 'Ruijia (Fermi) Zhang — Builder · Researcher · Engineer'
+  };
+  var btn = document.getElementById('langToggle');
+  var saved = localStorage.getItem('lang');
+  if (saved === 'en') document.body.classList.add('en');
+  function sync() {
+    var isEn = document.body.classList.contains('en');
+    btn.textContent = isEn ? '中' : 'EN';
+    document.documentElement.lang = isEn ? 'en' : 'zh-CN';
+    document.title = isEn ? TITLES.en : TITLES.zh;
+  }
+  btn.addEventListener('click', function() {
+    document.body.classList.toggle('en');
+    localStorage.setItem('lang', document.body.classList.contains('en') ? 'en' : 'zh');
+    sync();
+  });
+  sync();
+})();
+</script>
 </body>
 </html>
