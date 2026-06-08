@@ -550,7 +550,7 @@
     <span class="project-tag tag-content">Indie</span>
     <div class="project-title" style="font-family: 'JetBrains Mono', monospace;">0xDEAD</div>
     <div class="project-desc">
-      <span class="lang-zh">一款基于以太坊智能合约机制的独立游戏，核心玩法围绕约束传播（constraint propagation），叙事受自传体虚构（autofiction）启发。独立开发中，目标 2026 年 6 月推出 demo。</span><span class="lang-en">An indie game built on Ethereum smart contract mechanics, featuring constraint propagation as the core puzzle system and autofiction-inspired narrative design. Solo development, targeting June 2026 demo.</span>
+      <span class="lang-zh">一款基于以太坊智能合约机制的独立游戏，核心玩法围绕约束传播（constraint propagation），叙事受自传体虚构（autofiction）启发。独立开发中，目标 2026 年 9 月前推出 demo。</span><span class="lang-en">An indie game built on Ethereum smart contract mechanics, featuring constraint propagation as the core puzzle system and autofiction-inspired narrative design. Solo development, targeting a demo by September 2026.</span>
     </div>
   </div>
 
@@ -775,7 +775,7 @@
     zh: '章芮嘉 (Fermi) — Builder · Researcher · Engineer',
     en: 'Ruijia (Fermi) Zhang — Builder · Researcher · Engineer'
   };
-  if (localStorage.getItem('lang') === 'zh') document.body.classList.add('zh');
+  try { if (localStorage.getItem('lang') === 'zh') document.body.classList.add('zh'); } catch(e) {}
   var opts = document.querySelectorAll('.hero-lang-opt');
   function sync() {
     var isZh = document.body.classList.contains('zh');
@@ -789,7 +789,7 @@
     o.addEventListener('click', function() {
       var lang = o.dataset.lang;
       document.body.classList.toggle('zh', lang === 'zh');
-      localStorage.setItem('lang', lang);
+      try { localStorage.setItem('lang', lang); } catch(e) {}
       sync();
     });
   });
