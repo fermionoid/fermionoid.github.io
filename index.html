@@ -465,6 +465,23 @@
 
     a { text-decoration: none; }
   }
+
+  /* CN print: spread content to fill two full pages (zh mode only) */
+  @media print {
+    body.zh .hero { padding: 1.1rem 0 1.2rem; }
+    body.zh .hero-divider { margin: 1.3rem auto 0; }
+    body.zh .intro { padding: 1rem 0 1.1rem; }
+    body.zh .intro p { line-height: 1.7; }
+    body.zh .section { margin-bottom: 1.25rem; }
+    body.zh .section-label { margin-bottom: 0.6rem; }
+    body.zh .pub-item { padding: 0.55rem 0; line-height: 1.65; }
+    body.zh .card, body.zh .project-card { margin-bottom: 0.7rem; padding: 0.85rem 1.1rem; }
+    body.zh .project-desc { line-height: 1.7; }
+    body.zh .print-grid { gap: 0.85rem 1rem; }
+    body.zh .chips { gap: 0.55rem; }
+    body.zh .chip { padding: 0.35em 0.85em; }
+    body.zh .previously-box { margin-top: 0.9rem !important; padding: 0.75rem 1.1rem !important; }
+  }
 </style>
 </head>
 <body>
@@ -556,7 +573,7 @@
     </a>
     <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--ink-faint); margin-left: 0.6em; font-weight: 300;">2026-03-09</span>
     <div style="margin-top: 0.35rem; font-size: 0.85rem; color: var(--ink-faint); line-height: 1.6;">
-      <span class="lang-zh">一条开源 benchmark 如何让 MiniMax 港股单日涨 23%——技术信号到二级市场的传导路径。</span><span class="lang-en">How an open-source benchmark moved MiniMax's HK stock 23% in a single day — tracing the path from tech signal to market reaction.</span>
+      <span class="lang-zh">一条开源 benchmark 如何让 MiniMax 港股单日涨 20%+——技术信号到二级市场的传导路径。</span><span class="lang-en">How an open-source benchmark moved MiniMax's HK stock 20%+ in a single day — tracing the path from tech signal to market reaction.</span>
     </div>
   </div>
 
